@@ -14,9 +14,11 @@ library(showtext)
 library(pwr)
 
 # 设置中文显示
-# Mac系统使用showtext包处理中文
-font_add("SimSun", "SimSun") # 添加宋体，如果Mac上没有这个字体可能会报错
-showtext_auto() # 自动使用showtext渲染
+# 使用Mac系统自带的中文字体
+font_add("Heiti SC", "/System/Library/Fonts/STHeiti Light.ttc") # 黑体-简
+# 或者尝试
+# font_add("PingFang SC", "/System/Library/Fonts/PingFang.ttc") # 苹方字体
+showtext_auto()
 
 # 加载数据
 data(mtcars)
@@ -70,7 +72,7 @@ cat("对于当前效应量d=", round(actual_effect, 4), "，实际功效为:", r
 # 样本独立性是基于数据收集方法，不能通过统计测试确定
 # 假设mtcars数据集中的样本是独立的
 
-# 4. 执行检验步骤
+# 5. 执行检验步骤
 
 # 计算样本量
 n <- length(mtcars$mpg)
